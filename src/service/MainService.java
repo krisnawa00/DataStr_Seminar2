@@ -1,22 +1,24 @@
 package service;
 
+
 import datastr.MyLinkedList;
 
 public class MainService {
 
 	public static void main(String[] args) {
-		MyLinkedList<Integer> listForInt = new MyLinkedList<Integer>();
-		listForInt.add(45);
-		listForInt.add(-100);
-		listForInt.add(200);
-		listForInt.add(1);
-		
+		MyLinkedList<Integer> linkedListForInt = new  MyLinkedList<>();
 		try {
-			listForInt.print();
-			
+			linkedListForInt.add(45);
+			linkedListForInt.add(-100);
+			linkedListForInt.add(200);
+			linkedListForInt.add(1);
+			linkedListForInt.add(700, 3);;
+			linkedListForInt.print();
 		} catch (Exception e) {
-			System.out.println(e);
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 		}
+
 	}
 
 }

@@ -78,10 +78,13 @@ public class MyLinkedList<Ttype> {
 			
 			MyNode <Ttype> currentNode = firstNode;
 			
-			for (int i = 1; i <= position-1; i++) {
+			for (int i = 1; i < position-1; i++) {
 				currentNode = currentNode.getNext();
 			}
-			MyNode <Ttype> currentNodeNext = currentNode.getNext();
+			MyNode<Ttype> currentNodeNext = currentNode.getNext();
+			currentNode.setNext(newNode);
+			newNode.setNext(currentNodeNext);
+			counter++;
 		}
 	}
 	
