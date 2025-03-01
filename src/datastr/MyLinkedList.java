@@ -10,6 +10,7 @@ public class MyLinkedList <Ttype>{
 	public boolean isFull() {
 		try {
 		MyNode<Ttype> newNode = new MyNode (4);
+		return false;
 		}
 		catch (OutOfMemoryError e) {
 			return true;
