@@ -52,6 +52,39 @@ public class MyLinkedList<Ttype> {
 		}
 	}
 	
+	public void add(Ttype element, int position) throws Exception {
+		
+		if(isFull()) {
+			throw new Exception ("Saraksts ir pilns");
+		}
+		
+		
+		if (position <=0 || position > counter + 1) 
+		{
+			throw new Exception ("Padota pozicija nav atrasta");
+		}
+		if (position == 1) {
+			MyNode<Ttype> newNode = new MyNode<Ttype>(element);
+			newNode.setNext(firstNode);
+			firstNode = newNode;
+			counter++;
+		}
+		else if (position == counter + 1) {
+			add(element);
+		}
+		else {
+			MyNode<Ttype> newNode = new MyNode<Ttype>(element);
+			
+			
+			MyNode <Ttype> currentNode = firstNode;
+			
+			for (int i = 1; i <= position-1; i++) {
+				currentNode = currentNode.getNext();
+			}
+			MyNode <Ttype> currentNodeNext = currentNode.getNext();
+		}
+	}
+	
 	public void print() throws Exception
 	{
 		//pārbaudi uz isEmpty
