@@ -177,6 +177,17 @@ public class MyLinkedList<Ttype> {
 		System.out.println();
 	}
 	
+	
+	public void makeEmpty() {
+		if(!isEmpty()) {
+			firstNode = null;//netaisu ne get, ne set. tas nav nepieciešams, jo leitotājam nevajag pie šiem piekļut
+			lastNode = null;
+			counter = 0;
+			
+			System.gc();
+		}
+	}
+	
 	public Ttype get(int position) throws Exception {
 		if(isEmpty())
 		{
