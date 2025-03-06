@@ -16,6 +16,10 @@ public class MainService {
 			linkedListForInt.add(200, 6);
 			linkedListForInt.remove(1);
 			linkedListForInt.print();
+			System.out.println(linkedListForInt.get(2));
+			linkedListForInt.print();
+			System.out.println(linkedListForInt.search(700));
+			
 		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

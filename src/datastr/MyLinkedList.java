@@ -143,7 +143,22 @@ public class MyLinkedList<Ttype> {
 		
 	}
 	
+	public boolean search(Ttype element) throws Exception {
+		if(isEmpty())
+		{
+			throw new Exception("Saraksts ir tukšs, tāpēc nevar meklēt elementus");
+			
+		}
+		MyNode <Ttype> currentNode = firstNode;
+		while(currentNode != null) {
+			if(currentNode.getElement().equals(element)) {
+				return true;
+			}
+			currentNode = currentNode.getNext();
+		}
+		return false;
 	
+	}
 	public void print() throws Exception
 	{
 		//pārbaudi uz isEmpty
@@ -161,6 +176,30 @@ public class MyLinkedList<Ttype> {
 		}
 		System.out.println();
 	}
+	
+	public Ttype get(int position) throws Exception {
+		if(isEmpty())
+		{
+			Exception myException = new Exception("Saraksts ir tukšs, tāpēc nevar piekļūt elementiem");
+			throw myException;
+		}
+		if(position < 0 || position > counter) {
+			throw new Exception("Jūsu position nav atbilstošs");
+			
+		}
+		MyNode <Ttype> currentNode = firstNode;
+		
+		for (int i = 1; i < position - 1; i++) {
+			currentNode = currentNode.getNext();
+		}
+		
+		return currentNode.getElement();
+
+		
+
+	}
+	
+	
 	
 	
 	
