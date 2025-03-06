@@ -13,7 +13,10 @@ public class MainService {
 			linkedListForInt.add(200);
 			linkedListForInt.add(1);
 			linkedListForInt.add(700, 3);;
+			linkedListForInt.add(200, 6);
+			linkedListForInt.remove(1);
 			linkedListForInt.print();
+		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());

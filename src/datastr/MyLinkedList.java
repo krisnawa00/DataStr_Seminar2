@@ -88,6 +88,62 @@ public class MyLinkedList<Ttype> {
 		}
 	}
 	
+	
+	//dzesanas funkcija definicija, kura ka input param in pozicija
+	//veicam nepieciesamas parbaudes
+	//ja velamies dzest pirmo elementu
+	//ja velams dzest pedejo elementu
+	//ja velams dzest jebkuru elementu
+	
+	public void remove(int position)throws Exception{
+		if(isEmpty())
+		{
+			Exception myException = new Exception("Saraksts ir tukšs, tāpēc nevar izdzest");
+			throw myException;
+		}
+		if (position<1 || position > counter) {
+			throw new Exception ("Padota pozicija nav pareiza");
+		}
+		
+		if (position==1) {
+			firstNode = firstNode.getNext();
+			counter--;
+			System.gc();
+		}
+		else if (position==counter) {
+
+			MyNode <Ttype> currentNode = firstNode;
+			
+			for (int i = 1; i <= position - 2; i++) {
+				currentNode = currentNode.getNext();
+			}
+			
+			lastNode = currentNode;
+			lastNode.setNext(null);
+			counter--;
+			System.gc();
+			
+			
+		}
+		
+		else {
+			MyNode <Ttype> currentNode = firstNode;
+			for (int i = 1; i <= position - 2; i++) {
+				currentNode = currentNode.getNext();
+			}
+			MyNode <Ttype> currentNodeNextNext = currentNode.getNext().getNext();
+			
+			currentNode.setNext(currentNodeNextNext);
+			
+			counter--;
+			System.gc();
+		}
+
+		
+		
+	}
+	
+	
 	public void print() throws Exception
 	{
 		//pārbaudi uz isEmpty
